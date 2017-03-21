@@ -1,0 +1,28 @@
+{
+    "Version": "1.0",
+    "dateCreated": "12/31/2016",
+    "dateLastEdit": "01/25/2017",
+    "recipeName": "Belgian Blondie",
+    "style": "Belgian Blonde Ale",
+    "brewDate": "03/17/2017",
+    "batchSize": "6.5",
+    "fermentables":[ 
+        {"name": "Pilsner (DE)", "lbs": "10", "ozs": "0"},
+        {"name": "Vienna (DE)", "lbs": "2", "ozs": "0"},
+        {"name": "Acidulated Malt (DE)", "lbs": "0", "ozs": "6"},
+        {"name": "Aromatic (DE)", "lbs": "0", "ozs": "4"},
+        {"name": "Biscuit (DE)", "lbs": "0", "ozs": "4"}
+    ],
+    "mashingComments": "Single infusion mash 153 F for 1 hour ten minutes. Boil 60 minutes. 1.060 @74 F.",
+    "hops":[ 
+        {"name": "Hallertau (DE)", "lbs": "0", "ozs": "1", "alphaAcid": "4.1", "minutes": "60"},
+        {"name": "Saaz (CZ)", "lbs": "0", "ozs": "1", "alphaAcid": "3.6", "minutes": "30"},
+        {"name": "Tettnanger (DE)", "lbs": "0", "ozs": "1", "alphaAcid": "3.9", "minutes": "20"}
+    ],
+    "hopComments": "None",
+    "yeast": "Belgian Ardennes",
+    "fermentationtTemperatureF": "68",
+    "originalGravity": "1.060",
+    "finalGravity": "1.007",
+    "fermentingComment": "Single infusion mash at 152 deg F"
+}
