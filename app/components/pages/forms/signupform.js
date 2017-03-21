@@ -2,18 +2,15 @@
 /*
     This portion is the sign-up form panel
 */
-var React = require('react');
-
-// 
-var userState = require('../utils/userstate.js');
+import * as React from 'react';
 
 // Utility functions for things like field type
 // validation - email, password, zip, etc
-var validate = require('../utils/validate.js');
+import * as validate from '../../utils/validate.js';
 
 // Element render functions, primarily for form
 // fields.
-var renderField = require('../utils/renderfield.js');
+import * as renderField from '../../utils/renderField.js';
 
 // for reference
 var newUser = {
@@ -28,14 +25,14 @@ var newUser = {
 
 var errors = {};
 
-var SignUpForm = React.createClass({
-
-    getInitialState: function() {
+class SignUpForm extends React.Component {
+/*
+    getInitialState() {
         console.log('SEARCH - getInitialState');
         return {errors: {}, submitted: null, currentUser: {}}
-    },
-
-    isValid: function() {
+    }
+*/
+    isValid() {
         // the form fields we will validate
         var fields = ['fname', 'lname', 'uname', 'uemail', 'upassw']
 
@@ -70,9 +67,9 @@ var SignUpForm = React.createClass({
         this.setState({errors: errors})
 
         return isValid
-    },
+    }
 
-    getFormData: function() {
+    getFormData() {
         var data = {
             fname: this.refs.fname.value,
             lname: this.refs.lname.value,
@@ -82,11 +79,12 @@ var SignUpForm = React.createClass({
             cpassw: this.refs.cpassw.value
         }
         return data
-    },
+    }
 
-    handleSubmit: function() {
+    handleSubmit() {
         console.log('handleSubmit!')
         if(this.isValid()) {
+/*
             userState.create(this.getFormData(), function(data) {
                 console.log('got a user???')
                 console.log(data)
@@ -97,14 +95,15 @@ var SignUpForm = React.createClass({
                  this.context.router.push('/user');
 
             }.bind(this));
+*/
         } else {
             console.log('oops!')
             console.log(this.state.errors)
             console.log(this.props.errors)
         }
-    },
+    }
 
-    render: function() {
+    render() {
         return(
             <div>
                 <div className="row">
@@ -142,12 +141,10 @@ var SignUpForm = React.createClass({
                     </div>
                 </div>
             </div>
-        )
+        );
     }
-});
+}
 
-SignUpForm.contextTypes = {router: React.PropTypes.any};
-
-module.exports = SignUpForm;
+export { SignUpForm };
 
 

@@ -2,21 +2,21 @@
 /*
     This portion wraps the landing page components
 */
-var React = require('react');
+import * as React from 'react';
 
-var Purpose = require('./wells/purpose.js');
-var SignupForm = require('./forms/signupform.js');
+import { Purpose } from './wells/Purpose';
+import { SignUpForm } from './forms/signupform.js';
 
-var Signup = React.createClass({
-    render: function render() {
+class SignUp extends React.Component {
+    render() {
         return (
             <div>
                 <Purpose />
-                <SignupForm />
+                <SignUpForm />
             </div>
-        )
+        );
     }
-});
+}
 
-module.exports = Signup;
+export { SignUp };
 
