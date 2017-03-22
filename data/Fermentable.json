@@ -1,0 +1,10 @@
+{
+    "model": "Fermentable",
+    "data": [
+        {"name": "Pilsner (DE)", "lbs": "10", "ozs": "0"},
+        {"name": "Vienna (DE)", "lbs": "2", "ozs": "0"},
+        {"name": "Acidulated Malt (DE)", "lbs": "0", "ozs": "6"},
+        {"name": "Aromatic (DE)", "lbs": "0", "ozs": "4"},
+        {"name": "Biscuit (DE)", "lbs": "0", "ozs": "4"}
+    ]
+}
