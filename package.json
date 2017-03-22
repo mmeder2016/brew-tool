@@ -16,8 +16,10 @@
   "author": "Mike Meder, Jim Motyl",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "3.5.0",
     "body-parser": "1.17.1",
     "express": "4.15.2",
+    "mongoose": "4.9.1",
     "path": "0.12.7",
     "react": "15.4.2",
     "react-dom": "15.4.2",
