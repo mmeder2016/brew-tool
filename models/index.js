@@ -22,6 +22,9 @@ mongoose.Promise = Promise;
 var db = {};
 
 // The models... (add/remove as needed)
+db.Fermentable = require('./fermentable.js');
+
+/*
 db.ArticleModel = require('./article.js');
 db.RescueModel = require('./rescue.js');
 db.PetModel = require('./pet.js');
@@ -32,6 +35,7 @@ db.OptDataModel = require('./optdata.js');
 db.UserModel = require('./user-secure.js');
 db.EventModel = require('./event.js');
 db.LinkModel = require('./link.js');
+*/
 
 // These are nice to have available elsewhere
 db.mongoose = mongoose;
@@ -41,7 +45,7 @@ mongoose.connect(mongodbURI, function(err, data){
 	if(err)
 	    console.log(err);
 	else{
-	    console.log("connection success");
+	    console.log("Mongoose connection success");
 	    db.connflag = true;
 	}  
 });
