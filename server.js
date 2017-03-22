@@ -51,6 +51,8 @@ var db;
 */
 if(config.use_db === true) {
 
+    console.log('Server - setting database');
+
     // Mongo/Mongoose Database
     db = require('./models');
     app.set('db', db);
