@@ -9,6 +9,7 @@ _*
 *.log
 *.txt
 *.bat
+-*.*
 .DS_Store
 # Files created by winmerge - 
 *.*.bak
