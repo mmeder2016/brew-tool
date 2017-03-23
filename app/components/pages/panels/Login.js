@@ -6,6 +6,7 @@
 import * as React from 'react';
 
 class PanelA extends React.Component {
+
     render() {
         return(
             <div className="panel panel-primary panel-shadow">
