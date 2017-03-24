@@ -21,7 +21,7 @@ function addProducts(quantity) {
   }
 }
 
-//addProducts(20);
+addProducts(20);
 
 
 // change to match model schema as needed

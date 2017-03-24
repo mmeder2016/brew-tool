@@ -13,11 +13,12 @@ import { Test2 } from '../components/pages/Test2';
 import { SignUp } from '../components/pages/signup.js';
 
 import RecipeList from '../components/pages/RecipeList.js';
+import RecipeCreate from '../components/pages/RecipeCreate.js';
 
 const router = (
     <Router history={hashHistory}>
         <Route path='/' component={Main}>
-        <Route path='test1' component={Test1} />
+        <Route path='test1' component={RecipeCreate} />
         <Route path='test2' component={RecipeList} />
         <Route path='home' component={Landing} />
         <IndexRoute component={Landing} />
