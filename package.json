@@ -23,9 +23,9 @@
     "path": "0.12.7",
     "react": "15.4.2",
     "react-bootstrap": "^0.29.5",
-    "react-bootstrap-table": "3.1.1",
     "react-dom": "15.4.2",
-    "react-router": "2.4.1"
+    "react-router": "2.4.1",
+    "reactjs-bootstrap-table": "^1.0.12"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

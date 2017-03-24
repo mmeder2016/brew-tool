@@ -3,7 +3,7 @@
     
 */
 import React from 'react';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import BootstrapTable from 'reactjs-bootstrap-table';
 
 const products = [];
 
@@ -21,14 +21,21 @@ function addProducts(quantity) {
 
 addProducts(20);
 
+let columns = [
+  { name: 'id', display:'Product ID' },
+  { name: 'name', display:'Product Name' },
+  { name: 'price', display:'Product Price' }
+]
+
+// resize={extra: 0, minSize: 200}
+
+
 export default class RecipeList extends React.Component {
   render() {
     return (
-        <BootstrapTable data={ products } maxHeight='150px' scrollTop={ 'Bottom' }>
-            <TableHeaderColumn dataField='id' isKey={ true }>Product ID</TableHeaderColumn>
-            <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
-            <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
-        </BootstrapTable>
+        <div>
+            <BootstrapTable columns={columns} headers={true} data={products} bodyHeight={'3em'} resize={{extra: 0, minSize: 100}}/>
+        </div>
     );
   }
 }
