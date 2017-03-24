@@ -17,15 +17,15 @@ export default class Calculations extends React.Component {
         return (
             <Grid>
                 <Row className="show-grid">
-                    <Col sm={6} md={3}>
-                        <Form componentClass="fieldset" inline>
+                    <Col sm={6}>
+                        <Form componentClass="fieldset" horizontal>
                         <div className="center-block">
                             <Row>
                                 <FormGroup controlId="recipeName">
-                                    <Col sm={6} md={3}>
+                                    <Col sm={6}>
                                         <h3><Label>Recipe Name</Label></h3>
                                     </Col>
-                                    <Col sm={6} md={3}>
+                                    <Col sm={6}>
                                         <FormControl type="text" placeholder="Recipe Name"/>
                                     </Col>
                                 </FormGroup>
@@ -33,10 +33,10 @@ export default class Calculations extends React.Component {
                             <br/>
                             <Row>
                                 <FormGroup controlId="brewDate">
-                                    <Col sm={6} md={3}>
+                                    <Col sm={6}>
                                         <h3><Label>Brew Date</Label></h3>
                                     </Col>
-                                    <Col sm={6} md={3}>
+                                    <Col sm={6}>
                                         <FormControl type="text" placeholder="Recipe Name" />
                                     </Col>
                                 </FormGroup>
@@ -44,10 +44,10 @@ export default class Calculations extends React.Component {
                             <br/>
                             <Row>
                                 <FormGroup controlId="style">
-                                    <Col sm={6} md={3}>
+                                    <Col sm={6}>
                                         <h3><Label>Style</Label></h3>
                                     </Col>
-                                    <Col sm={6} md={3}>
+                                    <Col sm={6}>
                                         <FormControl type="text" placeholder="Recipe Name" />
                                     </Col>
                                 </FormGroup>
@@ -55,10 +55,10 @@ export default class Calculations extends React.Component {
                             <br/>
                             <Row>
                                 <FormGroup controlId="batchSize">
-                                    <Col sm={6} md={3}>
+                                    <Col sm={6}>
                                         <h3><Label>Batch Size</Label></h3>
                                     </Col>
-                                    <Col sm={6} md={3}>
+                                    <Col sm={6}>
                                         <FormControl type="text" placeholder="Recipe Name" />
                                     </Col>
                                 </FormGroup>
@@ -67,7 +67,7 @@ export default class Calculations extends React.Component {
                         </Form>
                     </Col>
 
-                    <Col sm={6} md={3}>
+                    <Col sm={6}>
                         <div className="center-block" style={calcsStyle}>
                         <Panel header={titleCalcs}  bsStyle="info">
                             <br/>
