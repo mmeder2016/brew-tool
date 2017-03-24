@@ -3,6 +3,8 @@
     
 */
 import React from 'react';
+
+// https://github.com/raythree/reactjs-bootstrap-table-demo
 import BootstrapTable from 'reactjs-bootstrap-table';
 
 const products = [];

@@ -20,11 +20,37 @@
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.center-block {
+.unfloat {
+    float: none !important;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+}
+
+._center-block {
     display: block;  
     margin-right: auto;  
     margin-left: auto;  
 }
+
+.calc-border {
+    border: 1px solid grey !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.center-static {
+    text-align: center;
+    margin: 0 auto;
+}
+
 /*
     Style to fix the issue of text 
     extending past panel length
