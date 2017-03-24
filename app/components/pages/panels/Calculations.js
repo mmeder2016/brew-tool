@@ -20,49 +20,38 @@ export default class Calculations extends React.Component {
                     <Col sm={6}>
                         <Form componentClass="fieldset" horizontal>
                         <div className="center-block">
-                            <Row>
                                 <FormGroup controlId="recipeName">
-                                    <Col sm={6}>
-                                        <h3><Label>Recipe Name</Label></h3>
+                                    <Col sm={3}>
+                                        <h4><Label bsStyle="info">Recipe Name</Label></h4>
                                     </Col>
-                                    <Col sm={6}>
+                                    <Col sm={9}>
                                         <FormControl type="text" placeholder="Recipe Name"/>
                                     </Col>
                                 </FormGroup>
-                            </Row>
-                            <br/>
-                            <Row>
                                 <FormGroup controlId="brewDate">
-                                    <Col sm={6}>
-                                        <h3><Label>Brew Date</Label></h3>
+                                    <Col sm={3}>
+                                        <h4><Label bsStyle="info">&nbsp;&nbsp;Brew&nbsp;&nbsp;Date&nbsp;</Label></h4>
                                     </Col>
-                                    <Col sm={6}>
+                                    <Col sm={9}>
                                         <FormControl type="text" placeholder="Recipe Name" />
                                     </Col>
                                 </FormGroup>
-                            </Row>
-                            <br/>
-                            <Row>
                                 <FormGroup controlId="style">
-                                    <Col sm={6}>
-                                        <h3><Label>Style</Label></h3>
+                                    <Col sm={3}>
+                                        <h4><Label bsStyle="info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Style&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Label></h4>
                                     </Col>
-                                    <Col sm={6}>
+                                    <Col sm={9}>
                                         <FormControl type="text" placeholder="Recipe Name" />
                                     </Col>
                                 </FormGroup>
-                            </Row>
-                            <br/>
-                            <Row>
                                 <FormGroup controlId="batchSize">
-                                    <Col sm={6}>
-                                        <h3><Label>Batch Size</Label></h3>
+                                    <Col sm={3}>
+                                        <h4><Label bsStyle="info">&nbsp;&nbsp;Batch Size&nbsp;</Label></h4>
                                     </Col>
-                                    <Col sm={6}>
+                                    <Col sm={9}>
                                         <FormControl type="text" placeholder="Recipe Name" />
                                     </Col>
                                 </FormGroup>
-                            </Row>
                         </div>
                         </Form>
                     </Col>
