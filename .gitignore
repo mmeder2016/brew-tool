@@ -18,3 +18,4 @@ _*
 # Links (FF)
 *.url
 .vscode
+npm-debug.log.*
