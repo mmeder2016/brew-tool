@@ -1,0 +1,104 @@
+// Include React
+var React = require("react");
+
+var HopsPanel = require("../components/HopsPanel");
+var FermentablesPanel = require("../components/FermentablesPanel");
+var CalculationsPanel = require("../components/CalculationsPanel");
+//var Hops = require("../components/Hops");
+//var Feremntables = require("../components/Feremntables");
+var helper = require("./utils/helpers");
+
+var Main = React.createClass({
+    getInitialState: function() {
+        console.log('Main getInitialState: function () {');
+        return {
+            recipe: {}
+        };
+    },
+
+    // data is the hop info to update recipe with 
+    addNewHop: function(data) {
+        console.log('Main addNewHop : function () {');
+        helper.addHop(data, this.state.recipe._id).then(function(response) {
+            console.log(response);
+            this.setState({
+                recipe: response.data
+            });
+        }.bind(this));
+    },
+
+    deleteHop: function(hopId) {
+        console.log('Main deleteHop : function () {');
+        helper.deleteHop(hopId, this.state.recipe._id).then(function(response) {
+            console.log(response);
+            this.setState({
+                recipe: response.data
+            });
+        }.bind(this));
+    },
+
+    // data is the hop info to update recipe with 
+    addNewFermentable: function(data) {
+        console.log('Main addNewFermentable : function () {');
+        helper.addFermentable(data, this.state.recipe._id).then(function(response) {
+            console.log(response);
+            this.setState({
+                recipe: response.data
+            });
+        }.bind(this));
+    },
+
+    deleteFermentable: function(fermentableId) {
+        console.log('Main deleteFermentable : function () {');
+        helper.deleteFermentable(fermentableId, this.state.recipe._id).then(function(response) {
+            console.log(response);
+            this.setState({
+                recipe: response.data
+            });
+        }.bind(this));
+    },
+
+    getRecipe: function(id) {
+        console.log('Main getRecipe : function () {');
+        helper.getRecipe(id).then(function(response) {
+            console.log(response);
+            this.setState({
+                recipe: response.data
+            });
+        }.bind(this));
+    },
+    testUpdateRecipe: function() {
+        console.log('Main testUpdateRecipe : function () {');
+        helper.updateRecipe(this.state.recipe).then(function(response) {
+            console.log(response);
+            this.setState({
+                recipe: response.data
+            });
+        }.bind(this));
+    },
+
+    render: function() {
+        console.log('Main render: function () {');
+
+        return ( 
+            <div className = "container-fluid" >
+                <div className = "row" >
+                    <div>
+                        <h1 className = "text-center" > Brew App </h1> 
+                        <br/>
+                        <div className = "text-center" >
+                        </div> 
+                    </div> 
+                </div> 
+                <hr/>
+                <button onClick = {this.getRecipe} className="btn btn-default" type="submit"> GetRecipe </button>
+                <button onClick = {this.testUpdateRecipe} className="btn btn-default" type="submit"> TestUpdateRecipe </button> 
+                <CalculationsPanel recipe = {this.state.recipe}/> 
+                <HopsPanel addNewHop={this.addNewHop} deleteHop={this.deleteHop} hops={this.state.recipe.hops}/> 
+                <FermentablesPanel addNewFermentable={this.addNewFermentable} deleteFermentable={this.deleteFermentable} fermentables={this.state.recipe.fermentables}/> 
+            </div>
+        );
+    },
+});
+
+module.exports = Main;
