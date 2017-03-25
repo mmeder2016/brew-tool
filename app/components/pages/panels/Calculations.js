@@ -31,19 +31,11 @@ export default class Calculations extends React.Component {
     }
 
     handleBrewDateChange(value, formattedValue) {
-        console.log('handleBrewDateChange() - '+formattedValue)
-        this.setState({
-            today: value, 
-            formattedToday: formattedValue
-        });
+        console.log('handleBrewDateChange - '+formattedValue);
     }
 
-    // not working
-    handleRecipeNameChange(value) {
-        console.log('handleRecipeNameChange() - '+value)
-        this.setState({
-            recipeName: value
-        });
+    handleRecipeNameChange() {
+        console.log('handleRecipeNameChange - '+this.recipeName.value);
     }
 
     renderStatic(text) {
@@ -73,7 +65,10 @@ export default class Calculations extends React.Component {
                                         <h4><Label bsStyle="info">Recipe Name</Label></h4>
                                     </Col>
                                     <Col sm={9}>
-                                        <FormControl type="text" placeholder="Recipe Name" onChange={this.handleRecipeNameChange} />
+                                        <FormControl type="text" 
+                                                     placeholder="Recipe Name" 
+                                                     inputRef={(ref) => {this.recipeName = ref}} 
+                                                     onChange={this.handleRecipeNameChange} />
                                     </Col>
                                 </FormGroup>
                                 <FormGroup controlId="brewDate">
