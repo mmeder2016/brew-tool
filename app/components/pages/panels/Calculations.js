@@ -7,6 +7,8 @@ import { Grid, Row, Col, Panel, Form, FormGroup, Label, FormControl } from 'reac
 // https://github.com/pushtell/react-bootstrap-date-picker
 import DatePicker from 'react-bootstrap-date-picker';
 
+const titlePanel = (<h4>Recipe Calculations</h4>);
+
 const titleCalcs = (<h5>Calculated Values</h5>);
 
 const calcsStyle = {
@@ -60,6 +62,7 @@ export default class Calculations extends React.Component {
 
     render() {
         return (
+            <Panel header={titlePanel}  bsStyle="success">
             <Grid>
                 <Row className="show-grid">
                     <Col sm={6}>
@@ -164,6 +167,7 @@ export default class Calculations extends React.Component {
                     </Col>
                 </Row>
             </Grid>
+            </Panel>
         );
     }
 }
