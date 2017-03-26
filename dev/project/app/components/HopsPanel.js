@@ -13,6 +13,11 @@ var HopsPanel = React.createClass({
         console.log('deleteHopCallback: function(){');
         this.props.deleteHop(id);
     },
+    
+    hopChange: function(pid, tid, val) {
+        console.log('HopsPanel hopChange : function () {');
+        this.props.hopChange(pid, tid, val);
+    },
 
     render: function() {
         console.log('HopsPanel render: function () {');
@@ -23,9 +28,10 @@ var HopsPanel = React.createClass({
         var parent = this;
 
         var hopsMap = [];
+        // An error is thrown if the recipe is still undefined
         if(Array.isArray(this.props.hops)) {
             hopsMap = this.props.hops.map(function (hop) {
-                return (<Hop key={hop._id} id={hop._id} name={hop.name} lbs={hop.lbs} ozs={hop.ozs} minutes={hop.minutes} cb={parent.deleteHopCallback}/>)
+                return (<Hop key={hop._id} id={hop._id} name={hop.name} lbs={hop.lbs} ozs={hop.ozs} minutes={hop.minutes} cb={parent.deleteHopCallback} hopChange={parent.hopChange}/>)
             });
         }
 

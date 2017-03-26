@@ -14,6 +14,11 @@ var FermentablesPanel = React.createClass({
         this.props.deleteFermentable(id);
     },
 
+    fermentableChange: function(pid, tid, val) {
+        console.log('fermentablesPanel fermentableChange : function () {');
+        this.props.fermentableChange(pid, tid, val);
+    },
+
     render: function() {
         console.log('FermentablesPanel render: function () {');
         console.log(this.props.fermentables);
@@ -23,7 +28,7 @@ var FermentablesPanel = React.createClass({
         var fermentablesMap = [];
         if(Array.isArray(this.props.fermentables)) {
             fermentablesMap = this.props.fermentables.map(function (fermentable) {
-                return (<Fermentable key={fermentable._id} id={fermentable._id} name={fermentable.name} lbs={fermentable.lbs} ozs={fermentable.ozs} cb={parent.deleteFermentableCallback}/>)
+                return (<Fermentable key={fermentable._id} id={fermentable._id} name={fermentable.name} lbs={fermentable.lbs} ozs={fermentable.ozs} cb={parent.deleteFermentableCallback} fermentableChange={parent.fermentableChange}/>)
             });
         }
 

@@ -77,6 +77,40 @@ var Main = React.createClass({
         }.bind(this));
     },
 
+    fermentableChange: function(pid, tid, val) {
+        console.log('Main fermentableChange : function () {');
+        for(var i = 0; i < this.state.recipe.fermentables.length; i++) {
+            console.log('inloop:' + this.state.recipe.fermentables[i]._id)
+            if(this.state.recipe.fermentables[i]._id === pid){
+                if(tid === 'ozs'){
+                    this.state.recipe.fermentables[i].ozs = val;
+                } else if(tid === 'lbs'){
+                    this.state.recipe.fermentables[i].lbs = val;
+                } 
+                break;
+            }
+        }
+        this.forceUpdate();
+    },
+
+    hopChange: function(pid, tid, val) {
+        console.log('Main hopChange : function () {');
+        for(var i = 0; i < this.state.recipe.hops.length; i++) {
+            console.log('inloop:' + this.state.recipe.hops[i]._id)
+            if(this.state.recipe.hops[i]._id === pid){
+                if(tid === 'ozs'){
+                    this.state.recipe.hops[i].ozs = val;
+                } else if(tid === 'lbs'){
+                    this.state.recipe.hops[i].lbs = val;
+                } else if(tid === 'minutes'){
+                    this.state.recipe.hops[i].minutes = val;
+                }
+                break;
+            }
+        }
+        this.forceUpdate();
+    },
+
     render: function() {
         console.log('Main render: function () {');
 
@@ -94,8 +128,8 @@ var Main = React.createClass({
                 <button onClick = {this.getRecipe} className="btn btn-default" type="submit"> GetRecipe </button>
                 <button onClick = {this.testUpdateRecipe} className="btn btn-default" type="submit"> TestUpdateRecipe </button> 
                 <CalculationsPanel recipe = {this.state.recipe}/> 
-                <HopsPanel addNewHop={this.addNewHop} deleteHop={this.deleteHop} hops={this.state.recipe.hops}/> 
-                <FermentablesPanel addNewFermentable={this.addNewFermentable} deleteFermentable={this.deleteFermentable} fermentables={this.state.recipe.fermentables}/> 
+                <HopsPanel hopChange={this.hopChange} addNewHop={this.addNewHop} deleteHop={this.deleteHop} hops={this.state.recipe.hops}/> 
+                <FermentablesPanel fermentableChange={this.fermentableChange} addNewFermentable={this.addNewFermentable} deleteFermentable={this.deleteFermentable} fermentables={this.state.recipe.fermentables}/> 
             </div>
         );
     },
