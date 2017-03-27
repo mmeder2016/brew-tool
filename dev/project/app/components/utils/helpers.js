@@ -13,6 +13,14 @@ var helper = {
         });
     },
 
+    getFermentableList: function() {
+        console.log('helper getFermentableList: function (id) {');
+        return axios({
+            method: "GET",
+            url: "/fermentablelist"
+        });
+    },
+
     getHopList: function() {
         console.log('helper getHopList: function (id) {');
         return axios({

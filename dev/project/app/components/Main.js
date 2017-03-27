@@ -20,7 +20,7 @@ var Main = React.createClass({
     addNewHop: function(data) {
         console.log('Main addNewHop : function () {');
         helper.addHop(data, this.state.recipe._id).then(function(response) {
-            console.log(response);
+            //console.log(response);
             this.setState({
                 recipe: response.data
             });
@@ -30,7 +30,7 @@ var Main = React.createClass({
     deleteHop: function(hopId) {
         console.log('Main deleteHop : function () {');
         helper.deleteHop(hopId, this.state.recipe._id).then(function(response) {
-            console.log(response);
+            //console.log(response);
             this.setState({
                 recipe: response.data
             });
@@ -41,7 +41,7 @@ var Main = React.createClass({
     addNewFermentable: function(data) {
         console.log('Main addNewFermentable : function () {');
         helper.addFermentable(data, this.state.recipe._id).then(function(response) {
-            console.log(response);
+            //console.log(response);
             this.setState({
                 recipe: response.data
             });
@@ -51,7 +51,7 @@ var Main = React.createClass({
     deleteFermentable: function(fermentableId) {
         console.log('Main deleteFermentable : function () {');
         helper.deleteFermentable(fermentableId, this.state.recipe._id).then(function(response) {
-            console.log(response);
+            //console.log(response);
             this.setState({
                 recipe: response.data
             });
@@ -61,7 +61,7 @@ var Main = React.createClass({
     getRecipe: function(id) {
         console.log('Main getRecipe : function () {');
         helper.getRecipe(id).then(function(response) {
-            console.log(response);
+            //console.log(response);
             this.setState({
                 recipe: response.data
             });
@@ -70,7 +70,7 @@ var Main = React.createClass({
     testUpdateRecipe: function() {
         console.log('Main testUpdateRecipe : function () {');
         helper.updateRecipe(this.state.recipe).then(function(response) {
-            console.log(response);
+            //console.log(response);
             this.setState({
                 recipe: response.data
             });

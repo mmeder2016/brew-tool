@@ -1,8 +1,26 @@
 // Include React
 var React = require("react");
 var Fermentable = require ("./Fermentable");
+var helper = require("./utils/helpers");
 
 var FermentablesPanel = React.createClass({
+
+    getInitialState: function() {
+        console.log('FermentablesPanel getInitialState: function () {');
+        return {
+            fermentableList: []
+        };
+    },
+
+    componentDidMount: function() {
+        console.log('FermentablesPanel componentDidMount');
+        helper.getFermentableList().then(function(res) {
+            var obj = JSON.parse(res.data);
+            this.setState({
+                fermentableList: obj.data
+            })
+        }.bind(this));
+    },
 
     addFermentable: function (data) {
         console.log('FermentablesPanel addNewFermentable : function () {');
@@ -21,7 +39,10 @@ var FermentablesPanel = React.createClass({
 
     render: function() {
         console.log('FermentablesPanel render: function () {');
-        console.log(this.props.fermentables);
+        
+        var fermentableMap2 = this.state.fermentableList.map(function (litem) {
+            return (<li key={litem.id}>{litem.name}</li>)
+        })
 
         var parent = this;
 

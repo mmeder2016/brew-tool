@@ -15,12 +15,12 @@ var HopsPanel = React.createClass({
 
     componentDidMount: function() {
         console.log('HopsPanel componentDidMount');
-        // helper.getHopList().then(function(res) {
-        //     var obj = JSON.parse(res.data);
-        //     this.setState({
-        //         hopList: obj.data
-        //     })
-        // }.bind(this));
+        helper.getHopList().then(function(res) {
+            var obj = JSON.parse(res.data);
+            this.setState({
+                hopList: obj.data
+            })
+        }.bind(this));
     },
 
     addHop: function (data) {
@@ -40,12 +40,9 @@ var HopsPanel = React.createClass({
 
     render: function() {
         console.log('HopsPanel render: function () {');
-        console.log(this.props.hops);
-        console.log('typeof this.props.hops:' + typeof this.props.hops);
-        console.log('isArray(this.props.hops):' + Array.isArray(this.props.hops));
 
         var hopMap2 = this.state.hopList.map(function (litem) {
-            return (<li key={litem.name}>{litem.name}</li>)
+            return (<li key={litem.id}>{litem.name}</li>)
         });
 
         var parent = this;
@@ -67,14 +64,6 @@ var HopsPanel = React.createClass({
                         </div>
                         <button onClick={this.addHop} className="add-hop" type="submit">Add New Hop</button>
 
-                        <div className="dropdown">
-                            <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">ChooseHop
-                            <span className="caret"></span></button>
-                            <ul className="dropdown-hops">
-                                {hopMap2}
-                            </ul>
-                        </div>
-
                         <div className="panel-body" id="savedSection">
                             {hopsMap}
                         </div>
@@ -86,3 +75,11 @@ var HopsPanel = React.createClass({
 });
 
 module.exports = HopsPanel;
+
+                        // <div className="dropdown">
+                        //     <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">ChooseHop
+                        //     <span className="caret"></span></button>
+                        //     <ul className="dropdown-hops">
+                        //         {hopMap2}
+                        //     </ul>
+                        // </div>

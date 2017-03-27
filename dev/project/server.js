@@ -39,7 +39,6 @@ var AUTHKEY = "9f195bca21d9eb8f1e20cfe7615e3744";
 var BREWAPIURL = "http://api.brewerydb.com/v2/";
 var queryUrl = BREWAPIURL;
 
-// var brewCategory = {};
 var brewStyles = {};
 var brewYeasts = {};
 var brewHops = {};
@@ -50,11 +49,6 @@ request(createURL('styles'), function(error, response, body) {
         brewStyles = JSON.parse(JSON.stringify(body));
     }
 });
-// request(createURL('categories'), function(error, response, body) {
-//     if (!error && response.statusCode == 200) {
-//         brewCategory = JSON.parse(JSON.stringify(body));
-//     }
-// });
 request(createURL('yeasts'), function(error, response, body) {
     if (!error && response.statusCode == 200) {
         brewYeasts = JSON.parse(JSON.stringify(body));
@@ -262,6 +256,11 @@ app.post("/updateRecipe", function(req, res) {
 app.get("/hoplist", function(req, res) {
     console.log('app.get("/hoplist", function(req, res) {');
     res.json(brewHops);
+});
+
+app.get("/fermentablelist", function(req, res) {
+    console.log('app.get("/fermentablelist", function(req, res) {');
+    res.json(brewFermentables);
 });
 
 app.post("/collections", function(req, res) {
