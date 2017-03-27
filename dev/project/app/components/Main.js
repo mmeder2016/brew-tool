@@ -77,6 +77,24 @@ var Main = React.createClass({
         }.bind(this));
     },
 
+    calculationChange: function(tid, val) {
+        console.log('Main calculationChange : function () {');
+        console.log('tid:' + tid + ' val:' + val);
+
+        if(tid === 'recipeName'){
+            this.state.recipe.recipeName = val;
+        } else if(tid === 'brewDate'){
+            this.state.recipe.brewDate = val;
+        } else if(tid === 'batchSize'){
+            this.state.recipe.batchSize = val;
+            // only the batchsize can change the calculations
+            this.forceUpdate();
+        } else if(tid === 'style'){
+            this.state.recipe.style = val;
+        }
+
+    },
+
     fermentableChange: function(pid, tid, val) {
         console.log('Main fermentableChange : function () {');
         for(var i = 0; i < this.state.recipe.fermentables.length; i++) {
@@ -127,7 +145,7 @@ var Main = React.createClass({
                 <hr/>
                 <button onClick = {this.getRecipe} className="btn btn-default" type="submit"> GetRecipe </button>
                 <button onClick = {this.testUpdateRecipe} className="btn btn-default" type="submit"> TestUpdateRecipe </button> 
-                <CalculationsPanel recipe = {this.state.recipe}/> 
+                <CalculationsPanel recipe = {this.state.recipe} calculationChange={this.calculationChange}/> 
                 <HopsPanel hopChange={this.hopChange} addNewHop={this.addNewHop} deleteHop={this.deleteHop} hops={this.state.recipe.hops}/> 
                 <FermentablesPanel fermentableChange={this.fermentableChange} addNewFermentable={this.addNewFermentable} deleteFermentable={this.deleteFermentable} fermentables={this.state.recipe.fermentables}/> 
             </div>

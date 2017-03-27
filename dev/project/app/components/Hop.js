@@ -9,7 +9,7 @@ var Hop = React.createClass({
     },
 
     handleChange: function(event) {
-        console.log('handleChange: function(event) {');
+        console.log('Hop handleChange: function(event) {');
         this.props.hopChange(this.props.id, event.target.id, event.target.value);
     },
 

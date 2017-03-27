@@ -7,7 +7,7 @@ var Fermentable = React.createClass({
         this.props.cb(this.props.id);
     },
     handleChange: function(event) {
-        console.log('handleChange: function(event) {');
+        console.log('Fermentable handleChange: function(event) {');
         this.props.fermentableChange(this.props.id, event.target.id, event.target.value);
     },
 
