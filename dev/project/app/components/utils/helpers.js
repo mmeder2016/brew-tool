@@ -13,6 +13,14 @@ var helper = {
         });
     },
 
+    getHopList: function() {
+        console.log('helper getHopList: function (id) {');
+        return axios({
+            method: "GET",
+            url: "/hoplist"
+        });
+    },
+
     addHop: function(hopName, _id) {
         console.log('helper addHop: function () {');
         console.log('axios.post("/newHop");');

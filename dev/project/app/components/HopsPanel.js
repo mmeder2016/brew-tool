@@ -1,8 +1,27 @@
 // Include React
 var React = require("react");
 var Hop = require ("./Hop");
+// var ReactDOM =require('react-dom');
+var helper = require("./utils/helpers");
 
 var HopsPanel = React.createClass({
+
+    getInitialState: function() {
+        console.log('HopsPanel getInitialState: function () {');
+        return {
+            hopList: []
+        };
+    },
+
+    componentDidMount: function() {
+        console.log('HopsPanel componentDidMount');
+        // helper.getHopList().then(function(res) {
+        //     var obj = JSON.parse(res.data);
+        //     this.setState({
+        //         hopList: obj.data
+        //     })
+        // }.bind(this));
+    },
 
     addHop: function (data) {
         console.log('HopsPanel addNewHop : function () {');
@@ -25,6 +44,10 @@ var HopsPanel = React.createClass({
         console.log('typeof this.props.hops:' + typeof this.props.hops);
         console.log('isArray(this.props.hops):' + Array.isArray(this.props.hops));
 
+        var hopMap2 = this.state.hopList.map(function (litem) {
+            return (<li key={litem.name}>{litem.name}</li>)
+        });
+
         var parent = this;
 
         var hopsMap = [];
@@ -43,6 +66,15 @@ var HopsPanel = React.createClass({
                             <h3 className="panel-title"><strong>Hops</strong></h3>
                         </div>
                         <button onClick={this.addHop} className="add-hop" type="submit">Add New Hop</button>
+
+                        <div className="dropdown">
+                            <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">ChooseHop
+                            <span className="caret"></span></button>
+                            <ul className="dropdown-hops">
+                                {hopMap2}
+                            </ul>
+                        </div>
+
                         <div className="panel-body" id="savedSection">
                             {hopsMap}
                         </div>
